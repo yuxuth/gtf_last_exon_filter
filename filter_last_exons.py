@@ -1,14 +1,13 @@
 import queue
 import sys
-
+import gzip
 #
 # @author: Fabian Friedrich
 # 2019.10.09
 #
 
 if len(sys.argv) >= 3:
-
-    with open(sys.argv[1], "r") as read_file, open(sys.argv[2], "w") as write_file:
+    with gzip.open(sys.argv[1], "rt") as read_file, open(sys.argv[2], "w") as write_file:
         if len(sys.argv) >= 4:
             maxSize = int(sys.argv[3])
         else:
